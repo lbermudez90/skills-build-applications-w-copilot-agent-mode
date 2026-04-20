@@ -17,13 +17,30 @@ const Activities = () => {
   }, [apiUrl]);
 
   return (
-    <div>
-      <h2>Activities</h2>
-      <ul>
-        {activities.map((activity, idx) => (
-          <li key={idx}>{activity.user} - {activity.activity} ({activity.duration} min)</li>
-        ))}
-      </ul>
+    <div className="card shadow mb-4">
+      <div className="card-body">
+        <h2 className="card-title mb-4 text-primary">Activities</h2>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover">
+            <thead className="table-primary">
+              <tr>
+                <th>User</th>
+                <th>Activity</th>
+                <th>Duration (min)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {activities.map((activity, idx) => (
+                <tr key={idx}>
+                  <td>{activity.user}</td>
+                  <td>{activity.activity}</td>
+                  <td>{activity.duration}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
