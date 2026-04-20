@@ -39,4 +39,3 @@ def get_base_url(request):
     if codespace_name:
         return f'https://{codespace_name}-8000.app.github.dev'
     return request.build_absolute_uri('/')[:-1]
-]
