@@ -30,7 +30,7 @@ router.register(r'leaderboard', views.LeaderboardViewSet, basename='leaderboard'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', lambda request: views.api_root(request, base_url=get_base_url(request)), name='api-root'),
+    path('', views.api_root, name='api-root'),
 ]
 
 # Helper to get base URL for Codespace or localhost
